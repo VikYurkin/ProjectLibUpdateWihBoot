@@ -6,4 +6,4 @@ Technology: Spring Boot(Spring MVC, Spring Core,
 
 Catalog of library
 
-This web apps is as ProjectLib, but implemented on Spring Boot.
+This web apps is as ProjectLibUpdate, but implemented on Spring Boot.
