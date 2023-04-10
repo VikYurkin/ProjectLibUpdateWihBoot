@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  lb:
+    depends_on:
+      - postgres
+    build:
+      context: .
+
+    environment:
+      DB_USERNAME: $DB_USERNAME
+      DB_PASSWORD: $DB_PASSWORD
+      DB_URL: $DB_URL
+    restart: always
+    ports:
+     - 8083:8070
+
+  postgres:
+    image: postgres:15.2
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 9876543219
+      POSTGRES_USER: postgres
+      POSTGRES_DB: lbDB
+    ports:
+      - 5433:5432
