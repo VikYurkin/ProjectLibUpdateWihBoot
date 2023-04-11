@@ -9,20 +9,22 @@ This web apps is as ProjectLibUpdate, but implemented on Spring Boot.
 Для запуска через docker compose:
 1) Создать файл  docker compose.yml:
 
-version: '3.7'
 
-services:
-  lb:
-    depends_on:
-      - postgres
-    image: vyurkin/updatespringboot-lb
-    environment:
-      DB_USERNAME: postgres
-      DB_PASSWORD: 9876543219
-      DB_URL: jdbc:postgresql://postgres:5432/lbDB
-    restart: always
-    ports:
-      - 8083:8070
+```sh
+version: '3.7'  
+
+services:  
+  lb:  
+    depends_on:  
+      - postgres  
+    image: vyurkin/updatespringboot-lb  
+    environment:  
+      DB_USERNAME: postgres  
+      DB_PASSWORD: 9876543219  
+      DB_URL: jdbc:postgresql://postgres:5432/lbDB  
+    restart: always  
+    ports:  
+      - 8083:8070  
 
   postgres:
     image: postgres:15.2
@@ -33,6 +35,7 @@ services:
       POSTGRES_DB: lbDB
     ports:
       - 5433:5432
+```
 
 2) Запустить сборку образа командой:
 
